@@ -1,0 +1,14 @@
+﻿.blockquote-footer{
+    color:#ffffff;
+    text-decoration: none !important;
+}
+    .blockquote-footer:hover {
+        color:#ffd800;
+    }
+
+#footer1 {
+    background:#762d00;
+}
+#footer2 {
+    background: #531f00;
+}
