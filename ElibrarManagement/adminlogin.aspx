@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="usersignup.aspx.cs" Inherits="ElibrarManagement.usersignup" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="adminlogin.aspx.cs" Inherits="ElibrarManagement.adminlogin" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
+
 
     <div class="container">
     <div class="row">
@@ -14,7 +14,7 @@
                     <div class="row">
                         <div class="col">
                             <center>
-                                <img width="150px" src="imgs/generaluser.jpg-removebg-preview.png" />
+                                <img width="150px" src="imgs/adminuser-removebg-preview.png" />
                             </center>
                         </div>
                     </div>
@@ -22,7 +22,7 @@
                     <div class="row">
                         <div class="col">
                             <center>
-                                <h3>Member Login</h3>
+                                <h3>Admin Login</h3>
                             </center>
                         </div>
                     </div>
@@ -43,13 +43,8 @@
                             </div>
                             
                             <div class="form-group">
-                                <label>Create Password</label>
-                                <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="create Password" TextMode="Password"></asp:TextBox>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label>Conform Password</label>
-                                <asp:TextBox CssClass="form-control" ID="TextBox3" runat="server" placeholder="Conform Password" TextMode="Password"></asp:TextBox>
+                                <label>Password</label>
+                                <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
                             </div>
 
                             <div class="form-group">
@@ -66,7 +61,7 @@
             </div>
 
 
-           
+            <a href="homepage.aspx"><< Back to Home</a>
             <br />
             <br />
 

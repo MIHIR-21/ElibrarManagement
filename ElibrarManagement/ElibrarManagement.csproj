@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="about-us.aspx" />
+    <Content Include="adminlogin.aspx" />
     <Content Include="bootstrap\css\bootstrap.min.css" />
     <Content Include="bootstrap\js\bootstrap.min.js" />
     <Content Include="bootstrap\js\jquery-3.3.1.slim.min.js" />
@@ -7005,6 +7006,7 @@
     <Content Include="homepage.aspx" />
     <Content Include="imgs\about-us.jpg - Copy.png" />
     <Content Include="imgs\about-us2.jpg" />
+    <Content Include="imgs\adminuser-removebg-preview.png" />
     <Content Include="imgs\defaulters-list.jpg-removebg-preview.png" />
     <Content Include="imgs\digital-inventory.jpg-removebg-preview.png" />
     <Content Include="imgs\generaluser.jpg-removebg-preview.png" />
@@ -7027,6 +7029,13 @@
     </Compile>
     <Compile Include="about-us.aspx.designer.cs">
       <DependentUpon>about-us.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminlogin.aspx.cs">
+      <DependentUpon>adminlogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminlogin.aspx.designer.cs">
+      <DependentUpon>adminlogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="ContactForm.aspx.cs">
       <DependentUpon>ContactForm.aspx</DependentUpon>
