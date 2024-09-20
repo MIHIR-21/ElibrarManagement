@@ -6,7 +6,7 @@
 
     <section>
         <%--<img src="imgs/about-us.jpg%20-%20Copy.png" width="100%" height="600px"/>--%>
-        <img src="imgs/about-us2.jpg" width="1000px"/>
+        <img src="imgs/about-us2.jpg" width="100%"/>
     </section>
 
     <div class="container">

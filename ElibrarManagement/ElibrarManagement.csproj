@@ -7007,6 +7007,7 @@
     <Content Include="imgs\about-us.jpg - Copy.png" />
     <Content Include="imgs\about-us2.jpg" />
     <Content Include="imgs\adminuser-removebg-preview.png" />
+    <Content Include="imgs\book1.jpg.png" />
     <Content Include="imgs\defaulters-list.jpg-removebg-preview.png" />
     <Content Include="imgs\digital-inventory.jpg-removebg-preview.png" />
     <Content Include="imgs\generaluser.jpg-removebg-preview.png" />
@@ -7018,6 +7019,7 @@
     <Content Include="imgs\uwp4231868.jpeg" />
     <Content Include="imgs\visit-us.jpg-removebg-preview.png" />
     <Content Include="userlogin.aspx" />
+    <Content Include="userprofile.aspx" />
     <Content Include="usersignup.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
@@ -7065,6 +7067,13 @@
     </Compile>
     <Compile Include="userlogin.aspx.designer.cs">
       <DependentUpon>userlogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="userprofile.aspx.cs">
+      <DependentUpon>userprofile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="userprofile.aspx.designer.cs">
+      <DependentUpon>userprofile.aspx</DependentUpon>
     </Compile>
     <Compile Include="usersignup.aspx.cs">
       <DependentUpon>usersignup.aspx</DependentUpon>
