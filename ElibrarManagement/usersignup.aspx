@@ -22,7 +22,7 @@
                     <div class="row">
                         <div class="col">
                             <center>
-                                <h3>Member Login</h3>
+                                <h3>Member Sign Up</h3>
                             </center>
                         </div>
                     </div>

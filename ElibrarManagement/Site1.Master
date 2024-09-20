@@ -61,7 +61,7 @@
                             <asp:LinkButton class="nav-link" ID="LinkButton1" runat="server" OnClick="LinkButton1_Click1">User Login</asp:LinkButton>
                         </li>
                         <li class="nav-item active">
-                            <asp:LinkButton class="nav-link" ID="LinkButton2" runat="server">Sign Up</asp:LinkButton>
+                            <asp:LinkButton class="nav-link" ID="LinkButton2" runat="server" OnClick="LinkButton2_Click1">Sign Up</asp:LinkButton>
                         </li>
                         <li class="nav-item active">
                             <asp:LinkButton class="nav-link" ID="LinkButton3" runat="server">Logout</asp:LinkButton>
@@ -89,7 +89,7 @@
                 <div class="row">
                     <div class="col-xl-12 col-sm-12 col-md-12 text-center">
                         <p>
-                            <asp:LinkButton class="blockquote-footer" ID="LinkButton6" runat="server">Admin Login</asp:LinkButton>
+                            <asp:LinkButton class="blockquote-footer" ID="LinkButton6" runat="server" OnClick="LinkButton6_Click">Admin Login</asp:LinkButton>
                             &nbsp;
                             <asp:LinkButton class="blockquote-footer" ID="LinkButton11" runat="server">Author Management</asp:LinkButton>
                             &nbsp;

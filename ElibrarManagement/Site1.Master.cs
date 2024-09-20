@@ -21,7 +21,7 @@ namespace ElibrarManagement
 
         protected void LinkButton2_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void LinkButton3_Click(object sender, EventArgs e)
@@ -36,7 +36,17 @@ namespace ElibrarManagement
 
         protected void LinkButton1_Click1(object sender, EventArgs e)
         {
-            //Response.Redirect(Request.);
+            Response.Redirect("userlogin.aspx");
+        }
+
+        protected void LinkButton2_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("usersignup.aspx");
+        }
+
+        protected void LinkButton6_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("adminlogin.aspx");
         }
     }
 }
