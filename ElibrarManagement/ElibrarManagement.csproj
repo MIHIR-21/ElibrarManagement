@@ -68,7 +68,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="about-us.aspx" />
+    <Content Include="adminauthormanagement.aspx" />
+    <Content Include="adminbookinvantory.aspx" />
+    <Content Include="adminbookissuing.aspx" />
     <Content Include="adminlogin.aspx" />
+    <Content Include="adminmembermanagement.aspx" />
+    <Content Include="adminpublishermanagement.aspx" />
     <Content Include="bootstrap\css\bootstrap.min.css" />
     <Content Include="bootstrap\js\bootstrap.min.js" />
     <Content Include="bootstrap\js\jquery-3.3.1.slim.min.js" />
@@ -7007,6 +7012,7 @@
     <Content Include="imgs\about-us.jpg - Copy.png" />
     <Content Include="imgs\about-us2.jpg" />
     <Content Include="imgs\adminuser-removebg-preview.png" />
+    <Content Include="imgs\author-writer.jpg.png" />
     <Content Include="imgs\book1.jpg.png" />
     <Content Include="imgs\defaulters-list.jpg-removebg-preview.png" />
     <Content Include="imgs\digital-inventory.jpg-removebg-preview.png" />
@@ -7014,6 +7020,7 @@
     <Content Include="imgs\home-bg.jpg.png" />
     <Content Include="imgs\in-homepage-banner.jpg.png" />
     <Content Include="imgs\logo.jpg" />
+    <Content Include="imgs\publisher.jpg.png" />
     <Content Include="imgs\search-online.lpg-removebg-preview.png" />
     <Content Include="imgs\sign-up.jpg-removebg-preview.png" />
     <Content Include="imgs\uwp4231868.jpeg" />
@@ -7032,12 +7039,47 @@
     <Compile Include="about-us.aspx.designer.cs">
       <DependentUpon>about-us.aspx</DependentUpon>
     </Compile>
+    <Compile Include="adminauthormanagement.aspx.cs">
+      <DependentUpon>adminauthormanagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminauthormanagement.aspx.designer.cs">
+      <DependentUpon>adminauthormanagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminbookinvantory.aspx.cs">
+      <DependentUpon>adminbookinvantory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminbookinvantory.aspx.designer.cs">
+      <DependentUpon>adminbookinvantory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminbookissuing.aspx.cs">
+      <DependentUpon>adminbookissuing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminbookissuing.aspx.designer.cs">
+      <DependentUpon>adminbookissuing.aspx</DependentUpon>
+    </Compile>
     <Compile Include="adminlogin.aspx.cs">
       <DependentUpon>adminlogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="adminlogin.aspx.designer.cs">
       <DependentUpon>adminlogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminmembermanagement.aspx.cs">
+      <DependentUpon>adminmembermanagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminmembermanagement.aspx.designer.cs">
+      <DependentUpon>adminmembermanagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpublishermanagement.aspx.cs">
+      <DependentUpon>adminpublishermanagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpublishermanagement.aspx.designer.cs">
+      <DependentUpon>adminpublishermanagement.aspx</DependentUpon>
     </Compile>
     <Compile Include="ContactForm.aspx.cs">
       <DependentUpon>ContactForm.aspx</DependentUpon>

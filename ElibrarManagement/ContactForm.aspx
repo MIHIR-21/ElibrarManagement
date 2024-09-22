@@ -1,13 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="ContactForm.aspx.cs" Inherits="ElibrarManagement.ContactForm" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <%--<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="ContactForm.aspx.cs" Inherits="ElibrarManagement.ContactForm" %>--%>
 
-<style>
+    <style>
         /* Simple styling for the form */
-       .form-container {
+        .form-container {
             max-width: 400px;
             margin: 0 auto;
             padding: 20px;
@@ -19,30 +20,30 @@
             margin-bottom: 15px;
         }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-        }
+            .form-group label {
+                display: block;
+                margin-bottom: 5px;
+            }
 
-        .form-group input, .form-group select {
-            width: 100%;
-            padding: 8px;
-            box-sizing: border-box;
-        }
+            .form-group input, .form-group select {
+                width: 100%;
+                padding: 8px;
+                box-sizing: border-box;
+            }
 
-        .form-group input[type="submit"] {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
+                .form-group input[type="submit"] {
+                    background-color: #007bff;
+                    color: white;
+                    border: none;
+                    cursor: pointer;
+                }
 
-        .form-group input[type="submit"]:hover {
-            background-color: #0056b3;
-        }
+                    .form-group input[type="submit"]:hover {
+                        background-color: #0056b3;
+                    }
     </style>
 
- 
+
     <div class="container">
         <center>
 
@@ -65,37 +66,37 @@
 
                 <div class="form-group">
 
-                <label>Your Name</label> 
-                <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" PlaceHolder="Enter Your Name"></asp:TextBox>
-                 <br />
-               
-                 <label>Your School Name</label>  
-                 
-                <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Enter your school name"></asp:TextBox>
-                 <br />
-
-                <label> Your School Location </label> 
-                   
-                <asp:TextBox CssClass="form-control" ID="TextBox3" runat="server" placeholder="Enter your school location"></asp:TextBox>
+                    <label>Your Name</label>
+                    <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" PlaceHolder="Enter Your Name"></asp:TextBox>
                     <br />
 
-                <label> Your Email </label>
-                    
-                <asp:TextBox CssClass="form-control" ID="TextBox4" runat="server" placeholder="Enter your email"></asp:TextBox>
+                    <label>Your School Name</label>
+
+                    <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Enter your school name"></asp:TextBox>
                     <br />
 
-                <label> Your Phone Number </label> 
-                 
-                <asp:TextBox CssClass="form-control" ID="TextBox5" runat="server" placeholder="Enter your phone number"></asp:TextBox>
+                    <label>Your School Location </label>
+
+                    <asp:TextBox CssClass="form-control" ID="TextBox3" runat="server" placeholder="Enter your school location"></asp:TextBox>
+                    <br />
+
+                    <label>Your Email </label>
+
+                    <asp:TextBox CssClass="form-control" ID="TextBox4" runat="server" placeholder="Enter your email"></asp:TextBox>
+                    <br />
+
+                    <label>Your Phone Number </label>
+
+                    <asp:TextBox CssClass="form-control" ID="TextBox5" runat="server" placeholder="Enter your phone number"></asp:TextBox>
                     <br />
                     <br />
                     <asp:Button ID="Button1" CssClass="btn btn-success btn-block btn-lg" runat="server" Text="Book a Demo" />
-                
 
+
+                </div>
             </div>
         </div>
     </div>
-</div>
 
     <%--<form id="form1" runat="server">
         <div class="form-container">
