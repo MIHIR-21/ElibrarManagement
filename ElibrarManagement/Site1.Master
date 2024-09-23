@@ -55,7 +55,7 @@
                     </ul>
                     <ul class="navbar-nav">
                         <li class="nav-item active">
-                            <asp:LinkButton class="nav-link" ID="LinkButton4" runat="server">View Books</asp:LinkButton>
+                            <asp:LinkButton class="nav-link" ID="LinkButton4" runat="server" OnClick="LinkButton4_Click">View Books</asp:LinkButton>
                         </li>
                         <li class="nav-item active">
                             <asp:LinkButton class="nav-link" ID="LinkButton1" runat="server" OnClick="LinkButton1_Click1">User Login</asp:LinkButton>
@@ -64,12 +64,11 @@
                             <asp:LinkButton class="nav-link" ID="LinkButton2" runat="server" OnClick="LinkButton2_Click1">Sign Up</asp:LinkButton>
                         </li>
                         <li class="nav-item active">
-                            <asp:LinkButton class="nav-link" ID="LinkButton3" runat="server">Logout</asp:LinkButton>
+                            <asp:LinkButton class="nav-link" ID="LinkButton3" runat="server" Visible="False">Logout</asp:LinkButton>
                         </li>
 
                         <li class="nav-item active">
-                            <asp:LinkButton class="nav-link" ID="LinkButton7" runat="server"
-                                 Visible="false">Hello User</asp:LinkButton>
+                            <asp:LinkButton class="nav-link" ID="LinkButton7" runat="server" Visible="false">Hello User</asp:LinkButton>
                         </li>
                     </ul>
                 </div>
@@ -91,15 +90,15 @@
                         <p>
                             <asp:LinkButton class="blockquote-footer" ID="LinkButton6" runat="server" OnClick="LinkButton6_Click">Admin Login</asp:LinkButton>
                             &nbsp;
-                            <asp:LinkButton class="blockquote-footer" ID="LinkButton11" runat="server" OnClick="LinkButton11_Click">Author Management</asp:LinkButton>
+                            <asp:LinkButton class="blockquote-footer" ID="LinkButton11" runat="server" OnClick="LinkButton11_Click" Visible="False">Author Management</asp:LinkButton>
                             &nbsp;
-                            <asp:LinkButton class="blockquote-footer" ID="LinkButton12" runat="server" OnClick="LinkButton12_Click">Publisher Management</asp:LinkButton>
+                            <asp:LinkButton class="blockquote-footer" ID="LinkButton12" runat="server" OnClick="LinkButton12_Click" Visible="False">Publisher Management</asp:LinkButton>
                             &nbsp;
-                            <asp:LinkButton class="blockquote-footer" ID="LinkButton8" runat="server" OnClick="LinkButton8_Click">Book Inventory</asp:LinkButton>
+                            <asp:LinkButton class="blockquote-footer" ID="LinkButton8" runat="server" OnClick="LinkButton8_Click" Visible="False">Book Inventory</asp:LinkButton>
                             &nbsp;
-                            <asp:LinkButton class="blockquote-footer" ID="LinkButton9" runat="server" OnClick="LinkButton9_Click">Book Issuing</asp:LinkButton>
+                            <asp:LinkButton class="blockquote-footer" ID="LinkButton9" runat="server" OnClick="LinkButton9_Click" Visible="False">Book Issuing</asp:LinkButton>
                             &nbsp;
-                            <asp:LinkButton class="blockquote-footer" ID="LinkButton10" runat="server" OnClick="LinkButton10_Click">Member Management</asp:LinkButton>
+                            <asp:LinkButton class="blockquote-footer" ID="LinkButton10" runat="server" OnClick="LinkButton10_Click" Visible="False">Member Management</asp:LinkButton>
                             &nbsp;
                         </p>
                     </div>
