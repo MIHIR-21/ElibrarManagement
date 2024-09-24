@@ -30,6 +30,57 @@ namespace ElibrarManagement
 
         protected void Button2_Click(object sender, EventArgs e)
         {
+            if (checkMembrExists())
+            {
+                Response.Write("<script>alert('Member Already Exist with this Member ID, try other ID')</script>");
+
+            }
+            else
+            {
+                signUpMember();
+            }
+        }
+
+        bool checkMembrExists()
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(GetConnectionString()))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("select * from member_master_tb1 where member_id='"+ TextBox8.Text.Trim() +"';", con);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    if(dt.Rows.Count >= 1)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                   
+                }
+            }
+            catch(Exception ex) 
+            {
+                Response.Write("<script>alert('" + ex.Message + "')</script>");
+                return false;
+            }
+            finally
+            {
+                if (con != null && con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+        }
+
+
+        void signUpMember()
+        {
             try
             {
 
@@ -50,18 +101,18 @@ namespace ElibrarManagement
                     cmd.Parameters.AddWithValue("@account_status", "pending");
 
                     cmd.ExecuteNonQuery();
-                    
+
                     Response.Write("<script>alert('Sign Up Successful. Go to User Login to Login ');</script>");
                 }
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
-                Response.Write("<script>alert('"+ ex.Message +"')</script>");
+                Response.Write("<script>alert('" + ex.Message + "')</script>");
 
             }
             finally
             {
-                if(con != null && con.State == ConnectionState.Open)
+                if (con != null && con.State == ConnectionState.Open)
                 {
                     con.Close();
                 }

@@ -39,8 +39,8 @@
 
 
                                 <div class="form-group">
-                                    <label>Member ID</label>
-                                    <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="Member ID"></asp:TextBox>
+                                    Username<label> </label>
+                                    &nbsp;<asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="username"></asp:TextBox>
                                 </div>
 
                                 <div class="form-group">
@@ -49,7 +49,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <asp:Button ID="Button1" CssClass="btn btn-success btn-block btn-lg" runat="server" Text="Login" />
+                                    <asp:Button ID="Button1" CssClass="btn btn-success btn-block btn-lg" runat="server" Text="Login" OnClick="Button1_Click" />
                                 </div>
 
 
