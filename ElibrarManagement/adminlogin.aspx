@@ -37,7 +37,6 @@
                         <div class="row">
                             <div class="col">
 
-
                                 <div class="form-group">
                                     Username<label> </label>
                                     &nbsp;<asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="username"></asp:TextBox>
@@ -51,21 +50,14 @@
                                 <div class="form-group">
                                     <asp:Button ID="Button1" CssClass="btn btn-success btn-block btn-lg" runat="server" Text="Login" OnClick="Button1_Click" />
                                 </div>
-
-
                             </div>
                         </div>
-
-
-
                     </div>
                 </div>
                 <a href="homepage.aspx"><< Back to Home</a>
                 <br />
                 <br />
-
             </div>
         </div>
     </div>
-
 </asp:Content>
