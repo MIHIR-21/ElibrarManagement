@@ -22,6 +22,7 @@
     <%--bootstrap--%>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <%--Datatabels js--%>
+    <script src="/DataTables/datatables.js"></script>
     <script src="datatables/js/dataTables.min.js"></script>
 
 
