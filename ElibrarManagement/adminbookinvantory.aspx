@@ -2,7 +2,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
-<%--    <script>
+
+   <%-- <script>
         function readURL(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
@@ -15,7 +16,6 @@
             }
         }
     </script>--%>
-
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -38,7 +38,7 @@
                         <div class="row">
                             <div class="col">
                                 <center>
-                                    <img id="imgview" width="100px" src="imgs/book1.jpg.png" />
+                                    <img id="#imgview" width="100px" src="imgs/book1.jpg.png" />
                                 </center>
                             </div>
                         </div>
@@ -75,9 +75,6 @@
                                     <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="Book Name"></asp:TextBox>
                                 </div>
                             </div>
-
-
-
                             <br />
 
                         </div>
@@ -98,8 +95,8 @@
                                 <label>Publisher Name</label>
                                 <div class="form-group">
                                     <asp:DropDownList class="form-control" ID="DropDownList2" runat="server">
-                                         <asp:ListItem Text="Publisher 1" Value="Publisher 1"></asp:ListItem>
-                                         <asp:ListItem Text="Publisher 2" Value="Publisher 2"></asp:ListItem>
+                                        <asp:ListItem Text="Publisher 1" Value="Publisher 1"></asp:ListItem>
+                                        <asp:ListItem Text="Publisher 2" Value="Publisher 2"></asp:ListItem>
                                     </asp:DropDownList>
                                 </div>
                             </div>
@@ -107,8 +104,6 @@
                                 <label>Author Name</label>
                                 <div class="form-group">
                                     <asp:DropDownList class="form-control" ID="DropDownList3" runat="server">
-                                        <asp:ListItem Text="Author 1" Value="Author 1"></asp:ListItem>
-                                        <asp:ListItem Text="Author 2" Value="Author 2"></asp:ListItem>
                                         <asp:ListItem Text="Author 3" Value="Author 3"></asp:ListItem>
                                     </asp:DropDownList>
                                 </div>
@@ -144,7 +139,7 @@
                             <div class="col-md-4">
                                 <label>Edition</label>
                                 <div class="form-group">
-                                    <asp:TextBox CssClass="form-control" ID="TextBox7" runat="server" placeholder="Edition" TextMode="SingleLine" ></asp:TextBox>
+                                    <asp:TextBox CssClass="form-control" ID="TextBox7" runat="server" placeholder="Edition" TextMode="SingleLine"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -166,7 +161,7 @@
                             <div class="col-md-4">
                                 <label>Actual Stock</label>
                                 <div class="form-group">
-                                    <asp:TextBox CssClass="form-control" ID="TextBox5" runat="server" placeholder="Actual Stock" TextMode="Number" ></asp:TextBox>
+                                    <asp:TextBox CssClass="form-control" ID="TextBox5" runat="server" placeholder="Actual Stock" TextMode="Number"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -212,8 +207,6 @@
                                     <asp:Button ID="Button4" CssClass="btn btn-outline-danger btn-block btn-lg" runat="server" Text="Delete" OnClick="Button4_Click" />
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
@@ -270,11 +263,9 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
-
 
 </asp:Content>
