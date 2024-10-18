@@ -56,7 +56,16 @@ namespace ElibrarManagement
         // delete button click
         protected void Button4_Click(object sender, EventArgs e)
         {
+            if (checkIfBookIdExists())
+            {
+                deleteBook();
+                clearForm();
+            }
+            else
+            {
+                Response.Write("<script>alert('book id is not Exists..')</script>");
 
+            }
         }
 
 
@@ -172,6 +181,33 @@ namespace ElibrarManagement
                 Response.Write("<script>alert('" + ex.Message + "')</script>");
 
             }
+        }
+
+        void deleteBook()
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(getConnectionString()))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("DELETE FROM book_master_tb1 WHERE book_id='"+ TextBox2.Text.ToString() +"'", con);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    GridView1.DataBind();
+                    Response.Write("<script>alert('book is Deleted ..')</script>");
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('" + ex.Message + "')</script>");
+
+            }
+        }
+
+        void clearForm()
+        {
+            TextBox2.Text = "";
         }
     }
 }
