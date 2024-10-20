@@ -48,7 +48,7 @@
                                 <div class="form-group">
                                     <div class="input-group">
                                         <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="ID"></asp:TextBox>
-                                        <asp:Button ID="Button1" CssClass="btn btn-primary" runat="server" Text="Go" />
+                                        <asp:Button ID="Button1" CssClass="btn btn-dark" runat="server" Text="Go" OnClick="Button1_Click" />
                                     </div>
 
                                 </div>
@@ -101,13 +101,13 @@
                         <div class="row">
                             <div class="col-6">
                                 <div class="form-group">
-                                    <asp:Button ID="Button2" CssClass="btn btn-outline-primary btn-block btn-lg" runat="server" Text="Issue" />
+                                    <asp:Button ID="Button2" CssClass="btn btn-outline-primary btn-block btn-lg" runat="server" Text="Issue" OnClick="Button2_Click" />
                                 </div>
                             </div>
 
                             <div class="col-6">
                                 <div class="form-group">
-                                    <asp:Button ID="Button3" CssClass="btn btn-outline-success btn-block btn-lg" runat="server" Text="Return" />
+                                    <asp:Button ID="Button3" CssClass="btn btn-outline-success btn-block btn-lg" runat="server" Text="Return" OnClick="Button3_Click" />
                                 </div>
                             </div>
                         </div>
@@ -143,7 +143,16 @@
 
                         <div class="row">
                             <div class="col">
-                                <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server"></asp:GridView>
+                                <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
+                                    <Columns>
+                                        <asp:BoundField DataField="member_id" HeaderText="Member ID" SortExpression="member_id" />
+                                        <asp:BoundField DataField="member_name" HeaderText="Member Name" SortExpression="member_name" />
+                                        <asp:BoundField DataField="book_id" HeaderText="Book ID" SortExpression="book_id" />
+                                        <asp:BoundField DataField="book_name" HeaderText="Book Name" SortExpression="book_name" />
+                                        <asp:BoundField DataField="due_date" HeaderText="Due Date" SortExpression="due_date" />
+                                    </Columns>
+                                </asp:GridView>
+                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:elibraryDBConnectionString3 %>" SelectCommand="SELECT * FROM [book_issue_tb1]"></asp:SqlDataSource>
                             </div>
                         </div>
                     </div>

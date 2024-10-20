@@ -28,7 +28,7 @@ namespace ElibrarManagement
             GridView1.DataBind();
             con = new SqlConnection(getConnectionString());
         }
-
+            
         private string getConnectionString()
         {
             return ConfigurationManager.ConnectionStrings["con"].ConnectionString;
