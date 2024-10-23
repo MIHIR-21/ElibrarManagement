@@ -1,5 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="userprofile.aspx.cs" Inherits="ElibrarManagement.userprofile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
+     <script type="text/javascript">
+ $(document).ready(function () {
+     $(".table").prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
+ });
+     </script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -149,7 +156,7 @@
                             
                                 <center>
                                      <div class="form-group">
-                                         <asp:Button ID="Button1" CssClass="btn btn-primary btn-block btn-lg" runat="server" Text="Update" />
+                                         <asp:Button ID="Button1" CssClass="btn btn-primary btn-block btn-lg" runat="server" Text="Update" OnClick="Button1_Click" />
                                      </div>
                                 </center>
                             
@@ -196,7 +203,7 @@
                     
                     <div class="row">
                         <div class="col">
-                            <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server"></asp:GridView>
+                            <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" OnRowDataBound="GridView1_RowDataBound"></asp:GridView>
                         </div>
                     </div>    
                 </div>

@@ -113,6 +113,7 @@ namespace ElibrarManagement
             Response.Redirect("viewbooks.aspx");
         }
 
+        // Logout Button
         protected void LinkButton3_Click(object sender, EventArgs e)
         {
             Session["usename"] = "";
@@ -134,6 +135,13 @@ namespace ElibrarManagement
             LinkButton12.Visible = false; // publisher management link button
 
             Response.Redirect("homepage.aspx");
+        }
+
+        // View Profile
+        protected void LinkButton7_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("userprofile.aspx");
+
         }
     }
 }

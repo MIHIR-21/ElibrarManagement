@@ -226,7 +226,6 @@
                 <div class="card">
                     <div class="card-body">
 
-
                         <div class="row">
                             <div class="col">
                                 <center>
@@ -246,23 +245,11 @@
                             <div class="col">
                                 <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="book_id" DataSourceID="SqlDataSource1">
                                     <Columns>
-                                        <asp:BoundField DataField="book_id" HeaderText="ID" ReadOnly="True" SortExpression="book_id" >
-                                        <ControlStyle Font-Bold="True" />
-                                        <ItemStyle Font-Bold="True" />
+                                        <asp:BoundField DataField="book_id" HeaderText="ID" ReadOnly="True" SortExpression="book_id">
+                                            <ControlStyle Font-Bold="True" />
+                                            <ItemStyle Font-Bold="True" />
                                         </asp:BoundField>
-                                        <%--<asp:BoundField DataField="book_name" HeaderText="book_name" SortExpression="book_name" />
-                                        <asp:BoundField DataField="genre" HeaderText="genre" SortExpression="genre" />
-                                        <asp:BoundField DataField="author_name" HeaderText="author_name" SortExpression="author_name" />
-                                        <asp:BoundField DataField="publisher_name" HeaderText="publisher_name" SortExpression="publisher_name" />
-                                        <asp:BoundField DataField="publish_date" HeaderText="publish_date" SortExpression="publish_date" />
-                                        <asp:BoundField DataField="language" HeaderText="language" SortExpression="language" />
-                                        <asp:BoundField DataField="edition" HeaderText="edition" SortExpression="edition" />
-                                        <asp:BoundField DataField="book_cost" HeaderText="book_cost" SortExpression="book_cost" />
-                                        <asp:BoundField DataField="no_of_pages" HeaderText="no_of_pages" SortExpression="no_of_pages" />
-                                        <asp:BoundField DataField="book_discription" HeaderText="book_discription" SortExpression="book_discription" />
-                                        <asp:BoundField DataField="actual_stock" HeaderText="actual_stock" SortExpression="actual_stock" />
-                                        <asp:BoundField DataField="current_stock" HeaderText="current_stock" SortExpression="current_stock" />
-                                        <asp:BoundField DataField="book_img_link" HeaderText="book_img_link" SortExpression="book_img_link" />--%>
+
                                         <asp:TemplateField>
 
                                             <ItemTemplate>
@@ -274,10 +261,9 @@
                                                                     <asp:Label ID="Label1" runat="server" Text='<%# Eval("book_name") %>' Font-Bold="True" Font-Size="X-Large"></asp:Label>
                                                                 </div>
                                                             </div>
-                                                            
+
                                                             <div class="row">
                                                                 <div class="col-12">
-
                                                                     Author -
                                                                     <asp:Label ID="Label2" runat="server" Font-Bold="True" Text='<%# Eval("author_name") %>'></asp:Label>
                                                                     &nbsp;| Genre -
@@ -287,10 +273,9 @@
 
                                                                 </div>
                                                             </div>
-                                                            
+
                                                             <div class="row">
                                                                 <div class="col-12">
-
                                                                     Publisher -
                                                                     <asp:Label ID="Label5" runat="server" Font-Bold="True" Text='<%# Eval("publisher_name") %>'></asp:Label>
                                                                     &nbsp;| Publish Date -
@@ -302,10 +287,9 @@
 
                                                                 </div>
                                                             </div>
-                                                            
+
                                                             <div class="row">
                                                                 <div class="col-12">
-
                                                                     Cost -
                                                                     <asp:Label ID="Label9" runat="server" Font-Bold="True" Text='<%# Eval("book_cost") %>'></asp:Label>
                                                                     &nbsp;| Actual Stock -
@@ -315,10 +299,9 @@
 
                                                                 </div>
                                                             </div>
-                                                            
+
                                                             <div class="row">
                                                                 <div class="col-12">
-
                                                                     Discription -
                                                                     <asp:Label ID="Label12" runat="server" Font-Bold="True" Font-Italic="True" Font-Size="Smaller" Text='<%# Eval("book_discription") %>'></asp:Label>
 
