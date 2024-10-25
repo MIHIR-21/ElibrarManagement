@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
@@ -12,41 +8,54 @@ namespace ElibrarManagement
 {
     public partial class userprofile : System.Web.UI.Page
     {
-
-        SqlConnection con;
         protected void Page_Load(object sender, EventArgs e)
         {
-            con = new SqlConnection(getConnectionString());
-            getDetails();
+            // Only load data if it's not a postback to avoid rebinding during postbacks
+            if (!IsPostBack)
+            {
+                getUserBookDetail();
+
+                if (!Page.IsPostBack)
+                {
+                    getUserPersonalDetails();
+                }
+            }
         }
 
+        // Connection string retrieval
         private string getConnectionString()
         {
             return ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         }
 
-        // Update Button
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        // user defined functions
-        void getDetails()
+        // Get details of books issued to the user
+        void getUserBookDetail()
         {
             try
             {
                 using (SqlConnection con = new SqlConnection(getConnectionString()))
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM member_master_tb1 WHERE member_id='" + Session["username"].ToString() +"'", con);
+
+                    // Fetching book_issue_tb1 data for the user based on Session["username"]
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM book_issue_tb1 WHERE member_id = @member_id", con);
+                    cmd.Parameters.AddWithValue("@member_id", Session["username"]);
+
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
 
-                    //Response.Write("<script>alert('Book Issued..')</script>");
-                    GridView1.DataSource = dt;
-                    GridView1.DataBind();
+                    // If data exists, bind to GridView
+                    if (dt.Rows.Count > 0)
+                    {
+                        GridView1.DataSource = dt;
+                        GridView1.DataBind();
+                    }
+                    else
+                    {
+                        // Show a message if no records are found
+                        Response.Write("<script>alert('No issued books found for this user.')</script>");
+                    }
                 }
             }
             catch (Exception ex)
@@ -55,21 +64,108 @@ namespace ElibrarManagement
             }
         }
 
+        //void updateUserPersonalDetails()
+        //{
+        //    string password = "";
+        //    if (TextBox10.Text.Trim() == "")
+        //    {
+        //        password = TextBox9.Text.Trim();
+        //    }
+        //    else
+        //    {
+        //        password = TextBox10.Text.Trim();
+        //    }
+
+        //    try
+        //    {
+        //        using(SqlConnection con = new SqlConnection(getConnectionString()))
+        //        {
+        //            con.Open();
+        //            SqlCommand cmd = new SqlCommand("UPDATE member_master_tb1 SET full_name=@full_name, dob=@dob, contact_no=@contact_no, email=@email, state=@state, city=@city, pincode=@pincode, full_address=@full_address, member_id=@member_id, password=@password, account_status=@account_status WHERE member_id=@member_id ", con);
+        //            cmd.Parameters.AddWithValue("member_id", Session["username"]);
+        //            cmd.Parameters.AddWithValue("member_id", Session["username"]);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Response.Write("<script>alert('" + ex.Message + "')</script>");
+        //    }
+
+        //}
+
+        void getUserPersonalDetails()
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(getConnectionString()))
+                {
+                    con.Open();
+
+                    // Fetching book_issue_tb1 data for the user based on Session["username"]
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM member_master_tb1 WHERE member_id = @member_id", con);
+                    cmd.Parameters.AddWithValue("@member_id", Session["username"]);
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    TextBox1.Text = dt.Rows[0]["full_name"].ToString();
+                    TextBox2.Text = dt.Rows[0]["dob"].ToString();
+                    TextBox3.Text = dt.Rows[0]["contact_no"].ToString();
+                    TextBox4.Text = dt.Rows[0]["email"].ToString();
+                    DropDownList1.SelectedValue = dt.Rows[0]["state"].ToString().Trim();
+                    TextBox5.Text = dt.Rows[0]["city"].ToString();
+                    TextBox6.Text = dt.Rows[0]["pincode"].ToString();
+                    TextBox7.Text = dt.Rows[0]["full_address"].ToString();
+                    TextBox8.Text = dt.Rows[0]["member_id"].ToString();
+                    TextBox9.Text = dt.Rows[0]["password"].ToString();
+
+                    Label1.Text = dt.Rows[0]["account_status"].ToString().Trim();
+
+                    if (dt.Rows[0]["account_status"].ToString().Trim() == "active")
+                    {
+                        Label1.Attributes.Add("class", "badge badge-pill badge-success");
+                    }
+                    else if (dt.Rows[0]["account_status"].ToString().Trim() == "pending")
+                    {
+                        Label1.Attributes.Add("class", "badge badge-pill badge-warning");
+                    }
+                    else if (dt.Rows[0]["account_status"].ToString().Trim() == "deactive")
+                    {
+                        Label1.Attributes.Add("class", "badge badge-pill badge-danger");
+                    }
+                    else
+                    {
+                        Label1.Attributes.Add("class", "badge badge-pill badge-secondary");
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('" + ex.Message + "')</script>");
+            }
+        }
+
+        // Placeholder for update button event
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+        }
+
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-             try
+            try
             {
                 if(e.Row.RowType == DataControlRowType.DataRow)
                 {
                     DateTime dt = Convert.ToDateTime(e.Row.Cells[5].Text);
                     DateTime today = DateTime.Today;
 
-                    if (today > dt)
+                    if(today > dt)
                     {
                         e.Row.BackColor = System.Drawing.Color.PaleVioletRed;
                     }
                 }
-                
             }
             catch (Exception ex)
             {
