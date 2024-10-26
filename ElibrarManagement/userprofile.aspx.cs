@@ -64,34 +64,58 @@ namespace ElibrarManagement
             }
         }
 
-        //void updateUserPersonalDetails()
-        //{
-        //    string password = "";
-        //    if (TextBox10.Text.Trim() == "")
-        //    {
-        //        password = TextBox9.Text.Trim();
-        //    }
-        //    else
-        //    {
-        //        password = TextBox10.Text.Trim();
-        //    }
+        void updateUserPersonalDetails()
+        {
+            string password = "";
+            if (TextBox10.Text.Trim() == "")
+            {
+                password = TextBox9.Text.Trim();
+            }
+            else
+            {
+                password = TextBox10.Text.Trim();
+            }
 
-        //    try
-        //    {
-        //        using(SqlConnection con = new SqlConnection(getConnectionString()))
-        //        {
-        //            con.Open();
-        //            SqlCommand cmd = new SqlCommand("UPDATE member_master_tb1 SET full_name=@full_name, dob=@dob, contact_no=@contact_no, email=@email, state=@state, city=@city, pincode=@pincode, full_address=@full_address, member_id=@member_id, password=@password, account_status=@account_status WHERE member_id=@member_id ", con);
-        //            cmd.Parameters.AddWithValue("member_id", Session["username"]);
-        //            cmd.Parameters.AddWithValue("member_id", Session["username"]);
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Response.Write("<script>alert('" + ex.Message + "')</script>");
-        //    }
+            try
+            {
+                using (SqlConnection con = new SqlConnection(getConnectionString()))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("UPDATE member_master_tb1 SET full_name=@full_name, dob=@dob, contact_no=@contact_no, email=@email, state=@state, city=@city, pincode=@pincode, full_address=@full_address, member_id=@member_id, password=@password, account_status=@account_status WHERE member_id=@member_id ", con);
+                    cmd.Parameters.AddWithValue("@member_id", Session["username"]);
 
-        //}
+                    cmd.Parameters.AddWithValue("@full_name", TextBox1.Text.ToString());
+                    cmd.Parameters.AddWithValue("@dob", TextBox2.Text.ToString());
+                    cmd.Parameters.AddWithValue("@contact_no", TextBox3.Text.ToString());
+                    cmd.Parameters.AddWithValue("@email", TextBox4.Text.ToString());
+                    cmd.Parameters.AddWithValue("@state", DropDownList1.SelectedItem.Value);
+                    cmd.Parameters.AddWithValue("@city", TextBox5.Text.ToString());
+                    cmd.Parameters.AddWithValue("@pincode", TextBox6.Text.ToString());
+                    cmd.Parameters.AddWithValue("@full_address", TextBox7.Text.ToString());
+                    cmd.Parameters.AddWithValue("@password", password);
+                    cmd.Parameters.AddWithValue("@account_status", "pending");
+
+                    int result = cmd.ExecuteNonQuery();
+                    con.Close();
+
+                    if (result > 0)
+                    {
+                        Response.Write("<script>alert('Your Details Updated Successfully..')</script>");
+                        getUserPersonalDetails();
+                        getUserBookDetail();
+                    }
+                    else
+                    {
+                        Response.Write("<script>alert('Invalid Entry')</script>");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('" + ex.Message + "')</script>");
+            }
+
+        }
 
         void getUserPersonalDetails()
         {
@@ -150,6 +174,7 @@ namespace ElibrarManagement
         // Placeholder for update button event
         protected void Button1_Click(object sender, EventArgs e)
         {
+            updateUserPersonalDetails();
         }
 
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
